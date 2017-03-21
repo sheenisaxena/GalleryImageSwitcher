@@ -18,13 +18,14 @@ import android.widget.ViewSwitcher;
 public class ImageSwitcherWithGallery extends AppCompatActivity implements AdapterView.OnItemSelectedListener,
         ViewSwitcher.ViewFactory {
 
-    private ImageSwitcher mswitcher;
+    public static boolean isGalleryUpdate;
     float initialX;
-    private int positionArg = 0;
     GestureDetector detector;
     Gallery g;
     boolean booleanswitch;
-
+    ImageAdapter adapter;
+    private ImageSwitcher mswitcher;
+    private int positionArg = 0;
     //All Images stored im integer array
     private Integer[] mImageIds = {R.drawable.tor, R.drawable.natasha, R.drawable.iron_man,
             R.drawable.assassins_creed, R.drawable.avatar_3d, R.drawable.call_of_duty_black_ops_3, R.drawable.dota_2
@@ -47,7 +48,8 @@ public class ImageSwitcherWithGallery extends AppCompatActivity implements Adapt
         g = (Gallery) findViewById(R.id.gallery);
 
         //Setting adapter over gallery
-        g.setAdapter(new ImageAdapter(ImageSwitcherWithGallery.this, mImageIds, positionArg));
+        adapter = new ImageAdapter(ImageSwitcherWithGallery.this, mImageIds);
+        g.setAdapter(adapter);
 
         //Implementing itemselected listener over gallery
         g.setOnItemSelectedListener(ImageSwitcherWithGallery.this);
@@ -135,7 +137,8 @@ public class ImageSwitcherWithGallery extends AppCompatActivity implements Adapt
 
                 // this is for display selected item in gallery view
                 g.setSelection(positionArg);
-//                g.setAdapter(new ImageAdapter(ImageSwitcherWithGallery.this, mImageIds, positionArg));
+                isGalleryUpdate = true;
+                adapter.notifyDataSetChanged();
 
                 break;
         }

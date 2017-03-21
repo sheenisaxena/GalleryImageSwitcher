@@ -1,0 +1,7 @@
+<resources>
+    <!-- 10 inch tablet-->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="gallery_image_width">150dp</dimen>
+    <dimen name="gallery_image_height">200dp</dimen>
+
+</resources>

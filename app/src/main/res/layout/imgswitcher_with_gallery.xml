@@ -18,6 +18,7 @@
         android:background="#1A000000"
         android:gravity="center_vertical"
         android:padding="10dp"
-        android:spacing="16dp" />
+        android:spacing="16dp"
+        android:unselectedAlpha="0.45"/>
 
 </RelativeLayout>

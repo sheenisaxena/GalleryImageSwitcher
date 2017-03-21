@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.imageswitcherdemo.MainActivity">
+
+    <Button
+        android:id="@+id/btn_simple_imgsw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Simple ImgSwitcher"
+        android:background="@drawable/btn_reg_selector"
+        android:textColor="#f4eb42"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btn_imgsw_with_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Advanced ImgSwitcher"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_below="@+id/btn_simple_imgsw"
+        android:background="@drawable/btn_reg_selector"
+        android:textSize="16dp" />
+
+
+</RelativeLayout>
